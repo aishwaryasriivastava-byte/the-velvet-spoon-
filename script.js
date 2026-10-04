@@ -1,10 +1,16 @@
 "use strict";
 
 /* ==========================================
-   THE VELVET SPOON - CAKE DATA
+   THE VELVET SPOON
+========================================== */
+
+
+/* ==========================================
+   CAKE DATA
 ========================================== */
 
 const cakes = [
+
     {
         id: 1,
         name: "Blueberry Bliss",
@@ -14,6 +20,7 @@ const cakes = [
         image: "images/Blueberry Bliss.jpeg",
         description: "A delightful blueberry cake with creamy layers and a fresh berry finish."
     },
+
     {
         id: 2,
         name: "Chocolate Truffle Cake",
@@ -23,6 +30,7 @@ const cakes = [
         image: "images/Chocolate Truffle.jpeg",
         description: "Rich chocolate cake layered with smooth truffle cream."
     },
+
     {
         id: 3,
         name: "Classic Vanilla Cake",
@@ -32,6 +40,7 @@ const cakes = [
         image: "images/Classic Vanilla.jpeg",
         description: "Soft vanilla sponge with creamy frosting for every celebration."
     },
+
     {
         id: 4,
         name: "Coffee Mocha Cake",
@@ -41,6 +50,7 @@ const cakes = [
         image: "images/Coffee Mocha.jpeg",
         description: "A delicious coffee and chocolate combination for mocha lovers."
     },
+
     {
         id: 5,
         name: "Ferrero Rocher Cake",
@@ -50,6 +60,7 @@ const cakes = [
         image: "images/Ferrero Rocher.jpeg",
         description: "A luxurious chocolate cake topped with Ferrero Rocher chocolates."
     },
+
     {
         id: 6,
         name: "Heart Love Cake",
@@ -59,6 +70,7 @@ const cakes = [
         image: "images/Heart Love.jpeg",
         description: "A beautiful heart-shaped cake made for special moments."
     },
+
     {
         id: 7,
         name: "Lotus Biscoff Cake",
@@ -68,6 +80,7 @@ const cakes = [
         image: "images/Lotus Biscoff.jpeg",
         description: "Creamy Biscoff cake with irresistible caramelised biscuit flavour."
     },
+
     {
         id: 8,
         name: "Mango Cream Cake",
@@ -77,6 +90,7 @@ const cakes = [
         image: "images/Mango Cream.jpeg",
         description: "Fresh mango flavour combined with soft sponge and creamy layers."
     },
+
     {
         id: 9,
         name: "Oreo Crunch Cake",
@@ -86,6 +100,7 @@ const cakes = [
         image: "images/Oreo Crunch.jpeg",
         description: "Chocolate cake packed with creamy Oreo goodness and crunchy cookies."
     },
+
     {
         id: 10,
         name: "Pink Blossom Cake",
@@ -95,6 +110,7 @@ const cakes = [
         image: "images/Pink Blossom.jpeg",
         description: "An elegant pink designer cake perfect for beautiful celebrations."
     },
+
     {
         id: 11,
         name: "Rainbow Unicorn Cake",
@@ -104,6 +120,7 @@ const cakes = [
         image: "images/Rainbow Unicorn.jpeg",
         description: "A colourful and magical unicorn cake made for joyful celebrations."
     },
+
     {
         id: 12,
         name: "Red Velvet Dream",
@@ -113,6 +130,7 @@ const cakes = [
         image: "images/Red Velvet.jpeg",
         description: "Velvety red sponge with rich and creamy frosting."
     },
+
     {
         id: 13,
         name: "Strawberry Rose Cake",
@@ -122,6 +140,7 @@ const cakes = [
         image: "images/Strawberry Rose.jpeg",
         description: "A delicate strawberry cake with a beautiful rose-inspired finish."
     }
+
 ];
 
 
@@ -132,71 +151,200 @@ const cakes = [
 const WHATSAPP_NUMBER = "916289263336";
 
 let cart = [];
+
 let activeCategory = "all";
+
 let searchTerm = "";
 
 
 /* ==========================================
-   GET HTML ELEMENTS
+   HTML ELEMENTS
 ========================================== */
 
-const themeBtn = document.getElementById("themeBtn");
-const cartButton = document.getElementById("cartButton");
-const cartCount = document.getElementById("cartCount");
+const themeBtn =
+    document.getElementById("themeBtn");
 
-const navLinks = document.getElementById("navLinks");
-const hamburger = document.getElementById("hamburger");
+const cartButton =
+    document.getElementById("cartButton");
 
-const categories = document.getElementById("categories");
-const searchInput = document.getElementById("searchInput");
-const clearSearch = document.getElementById("clearSearch");
-const searchResult = document.getElementById("searchResult");
-const cakeGrid = document.getElementById("cakeGrid");
+const cartCount =
+    document.getElementById("cartCount");
 
-const customForm = document.getElementById("customForm");
-const customName = document.getElementById("customName");
-const customPhone = document.getElementById("customPhone");
-const customFlavour = document.getElementById("customFlavour");
-const customSize = document.getElementById("customSize");
-const customDate = document.getElementById("customDate");
-const customMessage = document.getElementById("customMessage");
+const navLinks =
+    document.getElementById("navLinks");
 
-const contactForm = document.getElementById("contactForm");
+const hamburger =
+    document.getElementById("hamburger");
 
-const cartOverlay = document.getElementById("cartOverlay");
-const cartPanel = document.getElementById("cartPanel");
-const closeCart = document.getElementById("closeCart");
-const cartItems = document.getElementById("cartItems");
-const emptyCart = document.getElementById("emptyCart");
-const cartTotal = document.getElementById("cartTotal");
-const checkoutButton = document.getElementById("checkoutButton");
+const categories =
+    document.getElementById("categories");
 
-const checkoutModal = document.getElementById("checkoutModal");
-const closeCheckout = document.getElementById("closeCheckout");
-const checkoutItems = document.getElementById("checkoutItems");
-const checkoutTotal = document.getElementById("checkoutTotal");
-const checkoutForm = document.getElementById("checkoutForm");
+const searchInput =
+    document.getElementById("searchInput");
 
-const orderName = document.getElementById("orderName");
-const orderPhone = document.getElementById("orderPhone");
-const orderEmail = document.getElementById("orderEmail");
-const orderAddress = document.getElementById("orderAddress");
-const deliveryDate = document.getElementById("deliveryDate");
-const orderNote = document.getElementById("orderNote");
+const clearSearch =
+    document.getElementById("clearSearch");
 
-const lightbox = document.getElementById("lightbox");
-const closeLightbox = document.getElementById("closeLightbox");
-const lightboxImage = document.getElementById("lightboxImage");
+const searchResult =
+    document.getElementById("searchResult");
 
-const toast = document.getElementById("toast");
+const cakeGrid =
+    document.getElementById("cakesGrid");
+
+
+/* CUSTOM FORM */
+
+const customForm =
+    document.getElementById("customForm");
+
+const customName =
+    document.getElementById("custName");
+
+const customPhone =
+    document.getElementById("custPhone");
+
+const customFlavour =
+    document.getElementById("cakeFlavour");
+
+const customSize =
+    document.getElementById("cakeWeight");
+
+const customDate =
+    document.getElementById("delDate");
+
+const customMessage =
+    document.getElementById("custMessage");
+
+
+/* CART */
+
+const cartOverlay =
+    document.getElementById("cartOverlay");
+
+const cartPanel =
+    document.getElementById("cartPanel");
+
+const closeCart =
+    document.getElementById("closeCart");
+
+const cartItems =
+    document.getElementById("cartItems");
+
+const emptyCart =
+    document.getElementById("emptyCart");
+
+const cartTotal =
+    document.getElementById("cartTotal");
+
+const checkoutButton =
+    document.getElementById("checkoutButton");
+
+
+/* CHECKOUT */
+
+const checkoutModal =
+    document.getElementById("checkoutModal");
+
+const closeCheckout =
+    document.getElementById("closeCheckout");
+
+const checkoutItems =
+    document.getElementById("checkoutItems");
+
+const checkoutTotal =
+    document.getElementById("checkoutTotal");
+
+const checkoutForm =
+    document.getElementById("checkoutForm");
+
+const orderName =
+    document.getElementById("orderName");
+
+const orderPhone =
+    document.getElementById("orderPhone");
+
+const orderEmail =
+    document.getElementById("orderEmail");
+
+const orderAddress =
+    document.getElementById("orderAddress");
+
+const deliveryDate =
+    document.getElementById("deliveryDate");
+
+const orderNote =
+    document.getElementById("orderNote");
+
+
+/* LIGHTBOX */
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const closeLightbox =
+    document.getElementById("closeLightbox");
+
+const lightboxImage =
+    document.getElementById("lightboxImage");
+
+
+/* TOAST */
+
+const toast =
+    document.getElementById("toast");
 
 
 /* ==========================================
-   PRICE FORMAT
+   IMAGE FALLBACK
+========================================== */
+
+function addImageFallback(image) {
+
+    if (!image) return;
+
+    image.addEventListener("error", function () {
+
+        if (this.dataset.fallbackUsed === "true") {
+
+            this.style.display = "none";
+
+            return;
+        }
+
+        const currentSource =
+            this.getAttribute("src");
+
+        if (
+            currentSource &&
+            currentSource.startsWith("images/")
+        ) {
+
+            const fileName =
+                currentSource.replace("images/", "");
+
+            this.dataset.fallbackUsed = "true";
+
+            this.src = fileName;
+
+        } else {
+
+            this.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* ==========================================
+   PRICE
 ========================================== */
 
 function formatPrice(price) {
+
     return `₹${price.toLocaleString("en-IN")}`;
+
 }
 
 
@@ -205,12 +353,16 @@ function formatPrice(price) {
 ========================================== */
 
 function getCakeById(id) {
-    return cakes.find(cake => cake.id === Number(id));
+
+    return cakes.find(
+        cake => cake.id === Number(id)
+    );
+
 }
 
 
 /* ==========================================
-   TOAST MESSAGE
+   TOAST
 ========================================== */
 
 function showToast(message) {
@@ -222,8 +374,11 @@ function showToast(message) {
     toast.classList.add("show");
 
     setTimeout(() => {
+
         toast.classList.remove("show");
+
     }, 2500);
+
 }
 
 
@@ -235,20 +390,25 @@ function displayCakes() {
 
     if (!cakeGrid) return;
 
-    const filteredCakes = cakes.filter(cake => {
+    const filteredCakes =
+        cakes.filter(cake => {
 
-        const matchesCategory =
-            activeCategory === "all" ||
-            cake.category === activeCategory;
+            const categoryMatch =
+                activeCategory === "all" ||
+                cake.category === activeCategory;
 
-        const searchText =
-            `${cake.name} ${cake.description} ${cake.category}`.toLowerCase();
+            const text =
+                `${cake.name} ${cake.description} ${cake.category}`
+                .toLowerCase();
 
-        const matchesSearch =
-            searchText.includes(searchTerm.toLowerCase());
+            const searchMatch =
+                text.includes(
+                    searchTerm.toLowerCase()
+                );
 
-        return matchesCategory && matchesSearch;
-    });
+            return categoryMatch && searchMatch;
+
+        });
 
 
     cakeGrid.innerHTML = "";
@@ -263,30 +423,28 @@ function displayCakes() {
             </div>
         `;
 
-        if (searchResult) {
-            searchResult.textContent = "No cakes found.";
-        }
-
         return;
+
     }
 
 
     if (searchResult) {
 
-        if (searchTerm) {
-            searchResult.textContent =
-                `${filteredCakes.length} cake${filteredCakes.length > 1 ? "s" : ""} found`;
-        } else {
-            searchResult.textContent = "";
-        }
+        searchResult.textContent =
+            searchTerm
+                ? `${filteredCakes.length} cake(s) found`
+                : "";
+
     }
 
 
     filteredCakes.forEach(cake => {
 
-        const card = document.createElement("article");
+        const card =
+            document.createElement("article");
 
-        card.className = "cake-card";
+        card.className =
+            "cake-card";
 
 
         card.innerHTML = `
@@ -308,7 +466,9 @@ function displayCakes() {
 
             <div class="cake-info">
 
-                <h3>${cake.name}</h3>
+                <h3>
+                    ${cake.name}
+                </h3>
 
                 <p class="cake-description">
                     ${cake.description}
@@ -323,8 +483,7 @@ function displayCakes() {
 
                     <button
                         class="add-btn"
-                        type="button"
-                        data-add="${cake.id}"
+                        data-id="${cake.id}"
                     >
                         Add to Cart
                     </button>
@@ -332,30 +491,34 @@ function displayCakes() {
                 </div>
 
             </div>
+
         `;
 
 
-        const image = card.querySelector(".cake-image");
+        const image =
+            card.querySelector(".cake-image");
 
-        image.addEventListener("error", function () {
-
-            this.style.display = "none";
-
-        });
+        addImageFallback(image);
 
 
-        const addButton = card.querySelector("[data-add]");
+        const addButton =
+            card.querySelector(".add-btn");
 
-        addButton.addEventListener("click", function () {
 
-            addToCart(cake.id);
+        addButton.addEventListener(
+            "click",
+            () => {
 
-        });
+                addToCart(cake.id);
+
+            }
+        );
 
 
         cakeGrid.appendChild(card);
 
     });
+
 }
 
 
@@ -365,28 +528,42 @@ function displayCakes() {
 
 if (categories) {
 
-    categories.addEventListener("click", function (event) {
+    categories.addEventListener(
+        "click",
+        event => {
 
-        const button = event.target.closest("[data-category]");
+            const button =
+                event.target.closest(
+                    "[data-category]"
+                );
 
-        if (!button) return;
-
-        activeCategory = button.dataset.category;
-
-
-        categories
-            .querySelectorAll("[data-category]")
-            .forEach(btn => {
-                btn.classList.remove("active");
-            });
+            if (!button) return;
 
 
-        button.classList.add("active");
+            activeCategory =
+                button.dataset.category;
 
 
-        displayCakes();
+            categories
+                .querySelectorAll(
+                    "[data-category]"
+                )
+                .forEach(btn => {
 
-    });
+                    btn.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+            button.classList.add("active");
+
+
+            displayCakes();
+
+        }
+    );
 
 }
 
@@ -397,51 +574,60 @@ if (categories) {
 
 if (searchInput) {
 
-    searchInput.addEventListener("input", function () {
+    searchInput.addEventListener(
+        "input",
+        event => {
 
-        searchTerm = this.value.trim();
+            searchTerm =
+                event.target.value.trim();
 
-        displayCakes();
+            displayCakes();
 
-    });
+        }
+    );
 
 }
 
 
 if (clearSearch) {
 
-    clearSearch.addEventListener("click", function () {
+    clearSearch.addEventListener(
+        "click",
+        () => {
 
-        if (searchInput) {
             searchInput.value = "";
+
+            searchTerm = "";
+
+            displayCakes();
+
         }
-
-        searchTerm = "";
-
-        displayCakes();
-
-    });
+    );
 
 }
 
 
 /* ==========================================
-   CART - ADD ITEM
+   ADD TO CART
 ========================================== */
 
 function addToCart(id) {
 
-    const cake = getCakeById(id);
+    const cake =
+        getCakeById(id);
 
     if (!cake) return;
 
 
-    const existingItem = cart.find(item => item.id === cake.id);
+    const existing =
+        cart.find(
+            item => item.id === cake.id
+        );
 
 
-    if (existingItem) {
+    if (existing) {
 
-        existingItem.quantity++;
+        existing.quantity++;
 
     } else {
 
@@ -456,18 +642,23 @@ function addToCart(id) {
     updateCart();
 
 
-    showToast(`${cake.name} added to cart 🛒`);
+    showToast(
+        `${cake.name} added to cart 🛒`
+    );
 
 }
 
 
 /* ==========================================
-   CART - CHANGE QUANTITY
+   CHANGE QUANTITY
 ========================================== */
 
 function changeQuantity(id, amount) {
 
-    const item = cart.find(item => item.id === Number(id));
+    const item =
+        cart.find(
+            item => item.id === Number(id)
+        );
 
     if (!item) return;
 
@@ -477,7 +668,10 @@ function changeQuantity(id, amount) {
 
     if (item.quantity <= 0) {
 
-        cart = cart.filter(cartItem => cartItem.id !== Number(id));
+        cart =
+            cart.filter(
+                item => item.id !== Number(id)
+            );
 
     }
 
@@ -488,16 +682,23 @@ function changeQuantity(id, amount) {
 
 
 /* ==========================================
-   CART - REMOVE
+   REMOVE
 ========================================== */
 
 function removeFromCart(id) {
 
-    cart = cart.filter(item => item.id !== Number(id));
+    cart =
+        cart.filter(
+            item => item.id !== Number(id)
+        );
+
 
     updateCart();
 
-    showToast("Cake removed from cart.");
+
+    showToast(
+        "Cake removed from cart."
+    );
 
 }
 
@@ -508,29 +709,28 @@ function removeFromCart(id) {
 
 function updateCart() {
 
-    if (!cartItems) return;
+    const totalQuantity =
+        cart.reduce(
+            (sum, item) =>
+                sum + item.quantity,
+            0
+        );
 
 
-    const totalQuantity = cart.reduce(
-        (total, item) => total + item.quantity,
-        0
-    );
+    const totalPrice =
+        cart.reduce(
+            (sum, item) =>
+                sum + item.price * item.quantity,
+            0
+        );
 
 
-    const totalPrice = cart.reduce(
-        (total, item) => total + item.price * item.quantity,
-        0
-    );
+    cartCount.textContent =
+        totalQuantity;
 
 
-    if (cartCount) {
-        cartCount.textContent = totalQuantity;
-    }
-
-
-    if (cartTotal) {
-        cartTotal.textContent = formatPrice(totalPrice);
-    }
+    cartTotal.textContent =
+        formatPrice(totalPrice);
 
 
     cartItems.innerHTML = "";
@@ -538,55 +738,57 @@ function updateCart() {
 
     if (cart.length === 0) {
 
-        if (emptyCart) {
-            emptyCart.style.display = "block";
-        }
+        cartItems.appendChild(emptyCart);
 
-        if (checkoutButton) {
-            checkoutButton.disabled = true;
-        }
+        emptyCart.style.display =
+            "block";
+
+        checkoutButton.disabled =
+            true;
 
         return;
+
     }
 
 
-    if (emptyCart) {
-        emptyCart.style.display = "none";
-    }
+    emptyCart.style.display =
+        "none";
 
-
-    if (checkoutButton) {
-        checkoutButton.disabled = false;
-    }
+    checkoutButton.disabled =
+        false;
 
 
     cart.forEach(item => {
 
-        const cartItem = document.createElement("div");
+        const div =
+            document.createElement("div");
 
-        cartItem.className = "cart-item";
+        div.className =
+            "cart-item";
 
 
-        cartItem.innerHTML = `
+        div.innerHTML = `
 
             <img
                 src="${item.image}"
-                alt="${item.name}"
                 class="cart-item-image"
+                alt="${item.name}"
             >
-
 
             <div class="cart-item-info">
 
-                <h4>${item.name}</h4>
+                <h4>
+                    ${item.name}
+                </h4>
 
-                <p>${formatPrice(item.price)}</p>
+                <p>
+                    ${formatPrice(item.price)}
+                </p>
 
 
                 <div class="quantity-controls">
 
                     <button
-                        type="button"
                         class="quantity-btn"
                         data-action="minus"
                         data-id="${item.id}"
@@ -594,10 +796,11 @@ function updateCart() {
                         −
                     </button>
 
-                    <span>${item.quantity}</span>
+                    <span>
+                        ${item.quantity}
+                    </span>
 
                     <button
-                        type="button"
                         class="quantity-btn"
                         data-action="plus"
                         data-id="${item.id}"
@@ -609,7 +812,6 @@ function updateCart() {
 
 
                 <button
-                    type="button"
                     class="remove-btn"
                     data-action="remove"
                     data-id="${item.id}"
@@ -622,14 +824,14 @@ function updateCart() {
         `;
 
 
-        const image = cartItem.querySelector(".cart-item-image");
+        addImageFallback(
+            div.querySelector(
+                ".cart-item-image"
+            )
+        );
 
-        image.addEventListener("error", function () {
-            this.style.display = "none";
-        });
 
-
-        cartItems.appendChild(cartItem);
+        cartItems.appendChild(div);
 
     });
 
@@ -637,46 +839,53 @@ function updateCart() {
 
 
 /* ==========================================
-   CART BUTTON ACTIONS
+   CART CONTROLS
 ========================================== */
 
-if (cartItems) {
+cartItems.addEventListener(
+    "click",
+    event => {
 
-    cartItems.addEventListener("click", function (event) {
-
-        const button = event.target.closest("[data-action]");
+        const button =
+            event.target.closest(
+                "[data-action]"
+            );
 
         if (!button) return;
 
 
-        const id = Number(button.dataset.id);
+        const id =
+            Number(button.dataset.id);
 
-        const action = button.dataset.action;
 
-
-        if (action === "plus") {
+        if (
+            button.dataset.action === "plus"
+        ) {
 
             changeQuantity(id, 1);
 
         }
 
 
-        if (action === "minus") {
+        if (
+            button.dataset.action === "minus"
+        ) {
 
             changeQuantity(id, -1);
 
         }
 
 
-        if (action === "remove") {
+        if (
+            button.dataset.action === "remove"
+        ) {
 
             removeFromCart(id);
 
         }
 
-    });
-
-}
+    }
+);
 
 
 /* ==========================================
@@ -685,24 +894,21 @@ if (cartItems) {
 
 function openCart() {
 
-    if (cartOverlay) {
-        cartOverlay.classList.add("active");
-    }
+    cartOverlay.classList.add("active");
 
-    if (cartPanel) {
-        cartPanel.classList.add("active");
-    }
+    cartPanel.classList.add("active");
 
-    document.body.classList.add("no-scroll");
+    document.body.classList.add(
+        "no-scroll"
+    );
 
 }
 
 
-if (cartButton) {
-
-    cartButton.addEventListener("click", openCart);
-
-}
+cartButton.addEventListener(
+    "click",
+    openCart
+);
 
 
 /* ==========================================
@@ -711,153 +917,163 @@ if (cartButton) {
 
 function closeCartPanel() {
 
-    if (cartOverlay) {
-        cartOverlay.classList.remove("active");
-    }
+    cartOverlay.classList.remove(
+        "active"
+    );
 
-    if (cartPanel) {
-        cartPanel.classList.remove("active");
-    }
+    cartPanel.classList.remove(
+        "active"
+    );
 
-    document.body.classList.remove("no-scroll");
-
-}
-
-
-if (closeCart) {
-
-    closeCart.addEventListener("click", closeCartPanel);
+    document.body.classList.remove(
+        "no-scroll"
+    );
 
 }
 
 
-if (cartOverlay) {
+closeCart.addEventListener(
+    "click",
+    closeCartPanel
+);
 
-    cartOverlay.addEventListener("click", closeCartPanel);
 
-}
+cartOverlay.addEventListener(
+    "click",
+    closeCartPanel
+);
 
 
 /* ==========================================
    CHECKOUT
 ========================================== */
 
-if (checkoutButton) {
-
-    checkoutButton.addEventListener("click", function () {
+checkoutButton.addEventListener(
+    "click",
+    () => {
 
         if (cart.length === 0) {
 
-            showToast("Your cart is empty.");
+            showToast(
+                "Your cart is empty."
+            );
 
             return;
 
         }
 
 
-        if (checkoutItems) {
-
-            checkoutItems.innerHTML = "";
+        checkoutItems.innerHTML = "";
 
 
-            cart.forEach(item => {
+        cart.forEach(item => {
 
-                const row = document.createElement("div");
+            const row =
+                document.createElement("div");
 
-                row.className = "checkout-item";
-
-
-                row.innerHTML = `
-
-                    <span>
-                        ${item.name} × ${item.quantity}
-                    </span>
-
-                    <strong>
-                        ${formatPrice(item.price * item.quantity)}
-                    </strong>
-
-                `;
+            row.className =
+                "checkout-item";
 
 
-                checkoutItems.appendChild(row);
+            row.innerHTML = `
 
-            });
+                <span>
+                    ${item.name} × ${item.quantity}
+                </span>
 
-        }
+                <strong>
+                    ${formatPrice(
+                        item.price *
+                        item.quantity
+                    )}
+                </strong>
+
+            `;
 
 
-        const total = cart.reduce(
-            (sum, item) => sum + item.price * item.quantity,
-            0
+            checkoutItems.appendChild(row);
+
+        });
+
+
+        const total =
+            cart.reduce(
+                (sum, item) =>
+                    sum +
+                    item.price *
+                    item.quantity,
+                0
+            );
+
+
+        checkoutTotal.textContent =
+            formatPrice(total);
+
+
+        checkoutModal.classList.add(
+            "active"
         );
 
-
-        if (checkoutTotal) {
-            checkoutTotal.textContent = formatPrice(total);
-        }
-
-
-        if (checkoutModal) {
-            checkoutModal.classList.add("active");
-        }
-
-    });
-
-}
+    }
+);
 
 
 /* ==========================================
    CLOSE CHECKOUT
 ========================================== */
 
-if (closeCheckout) {
+closeCheckout.addEventListener(
+    "click",
+    () => {
 
-    closeCheckout.addEventListener("click", function () {
+        checkoutModal.classList.remove(
+            "active"
+        );
 
-        checkoutModal.classList.remove("active");
-
-    });
-
-}
+    }
+);
 
 
 /* ==========================================
    CHECKOUT FORM
 ========================================== */
 
-if (checkoutForm) {
-
-    checkoutForm.addEventListener("submit", function (event) {
+checkoutForm.addEventListener(
+    "submit",
+    event => {
 
         event.preventDefault();
 
 
-        if (cart.length === 0) {
+        const name =
+            orderName.value.trim();
 
-            showToast("Your cart is empty.");
+        const phone =
+            orderPhone.value.trim();
 
-            return;
+        const email =
+            orderEmail.value.trim();
 
-        }
+        const address =
+            orderAddress.value.trim();
+
+        const date =
+            deliveryDate.value;
+
+        const note =
+            orderNote.value.trim();
 
 
-        const name = orderName.value.trim();
-        const phone = orderPhone.value.trim();
-        const email = orderEmail.value.trim();
-        const address = orderAddress.value.trim();
-        const date = deliveryDate.value;
-        const note = orderNote.value.trim();
-
-
-        let message = `Hello The Velvet Spoon! 🍰
+        let message = `
+Hello The Velvet Spoon! 🍰
 
 I would like to place an order.
 
 CUSTOMER DETAILS
+
 Name: ${name}
 Phone: ${phone}
-Email: ${email}
+Email: ${email || "Not provided"}
 Address: ${address}
 Delivery Date: ${date || "Not specified"}
 
@@ -868,156 +1084,169 @@ ORDER DETAILS
         cart.forEach(item => {
 
             message += `
+
 ${item.name}
 Quantity: ${item.quantity}
-Price: ${formatPrice(item.price * item.quantity)}
+Price: ${formatPrice(
+                item.price *
+                item.quantity
+            )}
 `;
 
         });
 
 
-        const total = cart.reduce(
-            (sum, item) => sum + item.price * item.quantity,
-            0
-        );
+        const total =
+            cart.reduce(
+                (sum, item) =>
+                    sum +
+                    item.price *
+                    item.quantity,
+                0
+            );
 
 
         message += `
-TOTAL: ${formatPrice(total)}
+
+TOTAL:
+${formatPrice(total)}
 
 Special Note:
 ${note || "None"}
 
-Thank you!`;
+Thank you!
+`;
 
 
         const whatsappURL =
-            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                message
+            )}`;
 
 
-        window.open(whatsappURL, "_blank");
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
 
-
-        checkoutForm.reset();
 
         cart = [];
 
         updateCart();
 
+        checkoutForm.reset();
 
-        checkoutModal.classList.remove("active");
+        checkoutModal.classList.remove(
+            "active"
+        );
 
         closeCartPanel();
 
 
-        showToast("Order details sent to WhatsApp 💚");
+        showToast(
+            "Order details sent to WhatsApp 💚"
+        );
 
-    });
-
-}
+    }
+);
 
 
 /* ==========================================
-   CUSTOM CAKE FORM
+   CUSTOM CAKE
 ========================================== */
 
-if (customForm) {
-
-    customForm.addEventListener("submit", function (event) {
+customForm.addEventListener(
+    "submit",
+    event => {
 
         event.preventDefault();
 
 
-        const name = customName.value.trim();
-        const phone = customPhone.value.trim();
-        const flavour = customFlavour.value;
-        const size = customSize.value;
-        const date = customDate.value;
-        const messageText = customMessage.value.trim();
+        const name =
+            customName.value.trim();
+
+        const phone =
+            customPhone.value.trim();
+
+        const flavour =
+            customFlavour.value;
+
+        const size =
+            customSize.value;
+
+        const date =
+            customDate.value;
+
+        const details =
+            customMessage.value.trim();
 
 
-        const message = `Hello The Velvet Spoon! 🎂
+        const message = `
+Hello The Velvet Spoon! 🎂
 
 I want to request a CUSTOM CAKE.
 
 Name: ${name}
 Phone: ${phone}
 Flavour: ${flavour}
-Size: ${size}
+Weight: ${size}
 Required Date: ${date}
 
 Cake Details:
-${messageText || "No additional details."}
+${details || "No additional details."}
 `;
 
 
         const whatsappURL =
-            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+                message
+            )}`;
 
 
-        window.open(whatsappURL, "_blank");
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
 
 
         customForm.reset();
 
-        showToast("Custom cake request sent 💕");
-
-    });
-
-}
-
-
-/* ==========================================
-   CONTACT FORM
-========================================== */
-
-if (contactForm) {
-
-    contactForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
 
         showToast(
-            "Thank you! Your message has been received. 💌"
+            "Custom cake request sent 💕"
         );
 
-
-        contactForm.reset();
-
-    });
-
-}
+    }
+);
 
 
 /* ==========================================
-   DARK / LIGHT MODE
+   DARK MODE
 ========================================== */
 
 function updateThemeButton() {
 
-    if (!themeBtn) return;
-
-
-    const darkMode =
-        document.body.classList.contains("dark-mode");
+    const dark =
+        document.body.classList.contains(
+            "dark-mode"
+        );
 
 
     themeBtn.textContent =
-        darkMode ? "☀️" : "🌙";
-
-
-    themeBtn.setAttribute(
-        "aria-label",
-        darkMode ? "Switch to light mode" : "Switch to dark mode"
-    );
+        dark ? "☀️" : "🌙";
 
 }
 
 
-if (localStorage.getItem("velvetTheme") === "dark") {
+if (
+    localStorage.getItem(
+        "velvetTheme"
+    ) === "dark"
+) {
 
-    document.body.classList.add("dark-mode");
+    document.body.classList.add(
+        "dark-mode"
+    );
 
 }
 
@@ -1025,213 +1254,238 @@ if (localStorage.getItem("velvetTheme") === "dark") {
 updateThemeButton();
 
 
-if (themeBtn) {
+themeBtn.addEventListener(
+    "click",
+    () => {
 
-    themeBtn.addEventListener("click", function () {
+        document.body.classList.toggle(
+            "dark-mode"
+        );
 
-        document.body.classList.toggle("dark-mode");
 
-
-        const isDark =
-            document.body.classList.contains("dark-mode");
+        const dark =
+            document.body.classList.contains(
+                "dark-mode"
+            );
 
 
         localStorage.setItem(
             "velvetTheme",
-            isDark ? "dark" : "light"
+            dark ? "dark" : "light"
         );
 
 
         updateThemeButton();
 
-    });
-
-}
+    }
+);
 
 
 /* ==========================================
-   HAMBURGER MENU
+   HAMBURGER
 ========================================== */
 
-if (hamburger && navLinks) {
+hamburger.addEventListener(
+    "click",
+    () => {
 
-    hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle(
+            "active"
+        );
 
-        navLinks.classList.toggle("active");
 
-
-        const isOpen =
-            navLinks.classList.contains("active");
+        const open =
+            navLinks.classList.contains(
+                "active"
+            );
 
 
         hamburger.textContent =
-            isOpen ? "✕" : "☰";
+            open ? "✕" : "☰";
+
+    }
+);
 
 
-        hamburger.setAttribute(
-            "aria-expanded",
-            String(isOpen)
+navLinks
+    .querySelectorAll("a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                navLinks.classList.remove(
+                    "active"
+                );
+
+                hamburger.textContent =
+                    "☰";
+
+            }
         );
 
     });
-
-
-    navLinks.querySelectorAll("a").forEach(link => {
-
-        link.addEventListener("click", function () {
-
-            navLinks.classList.remove("active");
-
-            hamburger.textContent = "☰";
-
-            hamburger.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        });
-
-    });
-
-}
 
 
 /* ==========================================
    GALLERY LIGHTBOX
 ========================================== */
 
-document.querySelectorAll(".gallery-item img").forEach(image => {
+document
+    .querySelectorAll(".gallery-item img")
+    .forEach(image => {
 
-    image.addEventListener("click", function () {
-
-        if (!lightbox || !lightboxImage) return;
-
-
-        lightboxImage.src = this.src;
-
-        lightboxImage.alt = this.alt;
+        addImageFallback(image);
 
 
-        lightbox.classList.add("active");
+        image.addEventListener(
+            "click",
+            () => {
+
+                lightboxImage.src =
+                    image.src;
+
+                lightboxImage.alt =
+                    image.alt;
+
+                lightbox.classList.add(
+                    "active"
+                );
+
+            }
+        );
 
     });
 
-});
+
+closeLightbox.addEventListener(
+    "click",
+    () => {
+
+        lightbox.classList.remove(
+            "active"
+        );
+
+    }
+);
 
 
-if (closeLightbox) {
+lightbox.addEventListener(
+    "click",
+    event => {
 
-    closeLightbox.addEventListener("click", function () {
+        if (
+            event.target === lightbox
+        ) {
 
-        lightbox.classList.remove("active");
-
-    });
-
-}
-
-
-if (lightbox) {
-
-    lightbox.addEventListener("click", function (event) {
-
-        if (event.target === lightbox) {
-
-            lightbox.classList.remove("active");
+            lightbox.classList.remove(
+                "active"
+            );
 
         }
 
+    }
+);
+
+
+/* ==========================================
+   ESCAPE
+========================================== */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (event.key !== "Escape") return;
+
+
+        closeCartPanel();
+
+
+        checkoutModal.classList.remove(
+            "active"
+        );
+
+
+        lightbox.classList.remove(
+            "active"
+        );
+
+
+        navLinks.classList.remove(
+            "active"
+        );
+
+
+        hamburger.textContent =
+            "☰";
+
+    }
+);
+
+
+/* ==========================================
+   DATE
+========================================== */
+
+const today =
+    new Date()
+        .toISOString()
+        .split("T")[0];
+
+
+customDate.min =
+    today;
+
+deliveryDate.min =
+    today;
+
+
+/* ==========================================
+   SMOOTH SCROLL
+========================================== */
+
+document
+    .querySelectorAll(
+        'a[href^="#"]'
+    )
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            event => {
+
+                const targetId =
+                    link.getAttribute(
+                        "href"
+                    );
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (!target) return;
+
+
+                event.preventDefault();
+
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
     });
 
-}
-
 
 /* ==========================================
-   ESCAPE KEY
-========================================== */
-
-document.addEventListener("keydown", function (event) {
-
-    if (event.key !== "Escape") return;
-
-
-    closeCartPanel();
-
-
-    if (checkoutModal) {
-        checkoutModal.classList.remove("active");
-    }
-
-
-    if (lightbox) {
-        lightbox.classList.remove("active");
-    }
-
-
-    if (navLinks) {
-        navLinks.classList.remove("active");
-    }
-
-
-    if (hamburger) {
-        hamburger.textContent = "☰";
-        hamburger.setAttribute("aria-expanded", "false");
-    }
-
-});
-
-
-/* ==========================================
-   SET MINIMUM DATES
-========================================== */
-
-const today = new Date().toISOString().split("T")[0];
-
-
-if (customDate) {
-    customDate.min = today;
-}
-
-
-if (deliveryDate) {
-    deliveryDate.min = today;
-}
-
-
-/* ==========================================
-   SMOOTH NAVIGATION
-========================================== */
-
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-
-    link.addEventListener("click", function (event) {
-
-        const targetId = this.getAttribute("href");
-
-
-        if (!targetId || targetId === "#") return;
-
-
-        const target = document.querySelector(targetId);
-
-
-        if (!target) return;
-
-
-        event.preventDefault();
-
-
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-    });
-
-});
-
-
-/* ==========================================
-   INITIAL LOAD
+   START
 ========================================== */
 
 displayCakes();
@@ -1239,8 +1493,7 @@ displayCakes();
 updateCart();
 
 
-/* ==========================================
-   MAKE addToCart AVAILABLE TO HTML
-========================================== */
+/* GLOBAL */
 
-window.addToCart = addToCart;
+window.addToCart =
+    addToCart;
